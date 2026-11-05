@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#092d45"/><stop offset="1" stop-color="#117a83"/></linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#d5f1e8" stroke-opacity=".18" stroke-width="1"/><circle cx="18" cy="18" r="2" fill="#f1c75b"/></pattern>
+  </defs>
+  <rect width="900" height="600" fill="#f4eedc"/><rect x="18" y="18" width="864" height="564" rx="26" fill="url(#bg)"/><rect x="32" y="32" width="836" height="536" rx="18" fill="url(#grid)" stroke="#f2ca67" stroke-width="4"/>
+  <g fill="#f5f0df" font-family="Arial,sans-serif"><text x="70" y="112" font-size="30" letter-spacing="8">AUGMENTED REALITY LAB</text><text x="70" y="228" font-size="92" font-weight="700">TRACK</text><text x="70" y="315" font-size="92" font-weight="700" fill="#f4c95d">THE IMAGE</text><text x="74" y="365" font-size="24" letter-spacing="5">MINDAR • THREE.JS • AVR</text></g>
+  <g transform="translate(670 300)" stroke="#f5f0df" stroke-width="7" fill="none"><circle r="112"/><circle r="78" stroke="#f4c95d"/><circle r="42"/><path d="M-145 0H145M0-145V145M-103-103L103 103M103-103L-103 103"/><path d="M-175-175h45m-45 0v45M175-175h-45m45 0v45M-175 175h45m-45 0v-45M175 175h-45m45 0v-45" stroke="#f4c95d"/></g>
+  <g fill="#f5f0df"><circle cx="105" cy="462" r="18"/><circle cx="155" cy="462" r="8"/><circle cx="194" cy="462" r="14"/><circle cx="238" cy="462" r="6"/><circle cx="276" cy="462" r="20"/><circle cx="324" cy="462" r="9"/><circle cx="365" cy="462" r="16"/><circle cx="413" cy="462" r="7"/><circle cx="452" cy="462" r="19"/><circle cx="501" cy="462" r="10"/></g>
+  <g fill="#f4c95d"><rect x="78" y="510" width="54" height="22"/><rect x="146" y="510" width="22" height="22"/><rect x="180" y="510" width="72" height="22"/><rect x="266" y="510" width="34" height="22"/><rect x="314" y="510" width="54" height="22"/><rect x="382" y="510" width="22" height="22"/><rect x="416" y="510" width="82" height="22"/></g>
+  <g fill="#f5f0df"><path d="M810 72l9 21 23 2-18 15 6 22-20-12-20 12 6-22-18-15 23-2z"/><path d="M560 88l7 16 18 2-14 12 4 17-15-9-15 9 5-17-14-12 18-2z"/></g>
+</svg>

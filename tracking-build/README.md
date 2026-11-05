@@ -1,35 +1,26 @@
 # Tracking Build — Praktikum AVR Pertemuan 4
 
-Implementasi awal image tracking dan face tracking menggunakan MindAR 1.2.5 dan Three.js 0.160.0.
+Proyek image tracking dan face tracking menggunakan MindAR 1.2.5 dan Three.js 0.160.0.
 
 ## Status berkas
 
-Kode halaman dan demo sudah disiapkan. Modul JSON yang diberikan tidak menyertakan pustaka `vendor/`, target terkompilasi `targets/target-card.mind`, gambar `assets/images/target-card.png`, atau berkas dokumentasi acuan. Salin berkas tersebut dari `tracking-build.zip` yang disebut modul sebelum menjalankan demo. Struktur yang diperlukan:
+Pustaka runtime resmi sudah disertakan di `vendor/`. Gambar target khusus sudah dibuat di `assets/images/target-card.svg` dan `assets/images/target-card.png`. **Berkas `targets/target-card.mind` masih perlu dibuat** dengan mengompilasi PNG tersebut melalui compiler resmi MindAR. Jangan pakai `.mind` dari gambar lain, karena tidak akan mengenali target-card proyek ini.
 
-```text
-tracking-build/
-  assets/images/target-card.png
-  targets/target-card.mind
-  vendor/three/three.module.js
-  vendor/three/addons/...
-  vendor/mindar/mindar-image-three.prod.js
-  vendor/mindar/mindar-face-three.prod.js
-  index.html
-  image-tracking.html
-  face-tracking.html
-  src/
-```
+## Membuat berkas target `.mind`
+
+1. Buka [MindAR Image Target Compiler](https://hiukim.github.io/mind-ar-js-doc/tools/compile/).
+2. Muat `assets/images/target-card.png`.
+3. Jalankan compile dan unduh hasilnya.
+4. Simpan sebagai `targets/target-card.mind`.
 
 ## Menjalankan
 
-Di folder ini jalankan `python -m http.server 8080`, lalu buka `http://localhost:8080`. Tekan Mulai dan izinkan kamera. Face tracking memerlukan internet untuk mengunduh model dari CDN. Untuk uji HP gunakan deployment HTTPS seperti GitHub Pages.
+Setelah `.mind` tersedia, jalankan `python -m http.server 8080` di folder ini dan buka `http://localhost:8080`. Tekan **Mulai** dan izinkan kamera. Face tracking memerlukan internet untuk mengunduh model dari CDN. Untuk uji HP, deploy ke HTTPS seperti Cloudflare Pages.
 
 ## Uji dan bukti
 
-Belum ada hasil uji aktual karena lingkungan/perangkat uji pengguna tidak tersedia di sini. Isi [docs/test-cases.md](docs/test-cases.md) dan [docs/device-matrix.md](docs/device-matrix.md) berdasarkan percobaan nyata; status awal di dokumen itu ditandai belum diuji. Tambahkan tangkapan layar/video pada `docs/evidence/`.
+Belum ada hasil uji kamera aktual. Isi [docs/test-cases.md](docs/test-cases.md) dan [docs/device-matrix.md](docs/device-matrix.md) berdasarkan percobaan nyata. Simpan tangkapan layar/video di `docs/evidence/`.
 
-## Masalah dan investigasi
+## Keterbatasan dan investigasi
 
-Keterbatasan yang diketahui saat menyiapkan proyek: aset runtime tidak ada di modul JSON. Investigasi: ekstrak ZIP solusi acuan yang disebut pada Bagian 4 modul, lalu pastikan berkas vendor, gambar target, dan `.mind` tersedia di lokasi di atas. Face tracking dan kecocokan posisi kacamata juga belum diverifikasi dengan kamera nyata.
-
-Lengkapi nama/NIM, tautan GitHub Pages, hasil aktual, dan bukti sebelum pengumpulan. Jangan tandai pengujian sebagai berhasil tanpa menjalankannya.
+Target `.mind` harus dikompilasi khusus dari PNG proyek ini. Face tracking dan posisi kacamata belum diverifikasi melalui kamera nyata. Lengkapi nama/NIM, tautan deployment, hasil aktual, dan bukti sebelum pengumpulan. Jangan tandai pengujian berhasil tanpa menjalankannya.

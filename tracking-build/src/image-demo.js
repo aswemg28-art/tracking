@@ -1,6 +1,6 @@
 import {setStatus,setupStartButton} from './common.js';
 const TARGET_SRC='./targets/target-card.mind';
-const TARGET_ASPECT=372/674;
+const TARGET_ASPECT=600/900;
 function buildObject(THREE){const group=new THREE.Group();const knot=new THREE.Mesh(new THREE.TorusKnotGeometry(.12,.04,100,16),new THREE.MeshStandardMaterial({color:0x14b8a6,metalness:.25,roughness:.35}));knot.position.set(0,.25,.15);group.add(knot);const frame=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(1,1/TARGET_ASPECT)),new THREE.LineBasicMaterial({color:0xfbbf24}));frame.position.z=.01;group.add(frame);return group;}
 async function start(){const [THREE,{MindARThree}]=await Promise.all([import('three'),import('../vendor/mindar/mindar-image-three.prod.js')]);const mindarThree=new MindARThree({container:document.getElementById('container'),imageTargetSrc:TARGET_SRC});const {renderer,scene,camera}=mindarThree;scene.add(new THREE.HemisphereLight(0xffffff,0x667788,1.4));const dir=new THREE.DirectionalLight(0xffffff,1.2);dir.position.set(0,1,2);scene.add(dir);const anchor=mindarThree.addAnchor(0);anchor.group.add(buildObject(THREE));anchor.onTargetFound=()=>setStatus('Target terdeteksi','found');anchor.onTargetLost=()=>setStatus('Target hilang - mencari target','searching');await mindarThree.start();setStatus('Mencari target','searching');renderer.setAnimationLoop(()=>renderer.render(scene,camera));}
 setupStartButton(start);
